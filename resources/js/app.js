@@ -4,7 +4,7 @@ import Sortable from "sortablejs";
 
 if (!document.documentElement.dataset.theme) {
     document.documentElement.dataset.theme =
-        localStorage.getItem("flowbase-theme") ||
+        localStorage.getItem("digitalcode-theme") ||
         (window.matchMedia("(prefers-color-scheme: dark)").matches
             ? "dark"
             : "light");
@@ -16,9 +16,9 @@ Alpine.data("themeToggle", () => ({
     toggle() {
         this.dark = !this.dark;
         document.documentElement.dataset.theme = this.dark ? "dark" : "light";
-        localStorage.setItem("flowbase-theme", this.dark ? "dark" : "light");
+        localStorage.setItem("digitalcode-theme", this.dark ? "dark" : "light");
         window.dispatchEvent(
-            new CustomEvent("flowbase-theme-changed", {
+            new CustomEvent("digitalcode-theme-changed", {
                 detail: this.dark ? "dark" : "light",
             }),
         );
@@ -95,12 +95,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }),
     );
     const collapse = document.getElementById("collapseSidebar");
-    if (localStorage.getItem("flowbase-sidebar") === "collapsed")
+    if (localStorage.getItem("digitalcode-sidebar") === "collapsed")
         shell?.classList.add("is-collapsed");
     collapse?.addEventListener("click", () => {
         shell?.classList.toggle("is-collapsed");
         localStorage.setItem(
-            "flowbase-sidebar",
+            "digitalcode-sidebar",
             shell?.classList.contains("is-collapsed")
                 ? "collapsed"
                 : "expanded",
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
         region.append(el);
         setTimeout(remove, 4800);
     };
-    window.Flowbase = { toast };
+    window.DigitalCode = { toast };
     document
         .querySelectorAll("[data-flash]")
         .forEach((el) => toast(el.dataset.message, el.dataset.type));
@@ -219,17 +219,17 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("beforeinstallprompt", (event) => {
         event.preventDefault();
         installEvent = event;
-        if (localStorage.getItem("flowbase-install-later") !== "1") {
+        if (localStorage.getItem("digitalcode-install-later") !== "1") {
             const banner = document.createElement("div");
             banner.className = "install-banner";
             banner.innerHTML =
-                '<b>📱 Install Project Management</b><span>Get a faster app experience.</span><button>Install</button><button aria-label="Dismiss">Later</button>';
+                '<b>📱 Install Digital Code</b><span>Get a faster app experience.</span><button>Install</button><button aria-label="Dismiss">Later</button>';
             banner.querySelector("button").onclick = async () => {
                 await installEvent.prompt();
                 banner.remove();
             };
             banner.querySelectorAll("button")[1].onclick = () => {
-                localStorage.setItem("flowbase-install-later", "1");
+                localStorage.setItem("digitalcode-install-later", "1");
                 banner.remove();
             };
             document.body.append(banner);

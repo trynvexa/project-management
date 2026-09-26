@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', 'Flowbase')</title>
+    <title>@yield('title', 'Digital Code')</title>
     <link rel="manifest" href="{{ asset('manifest.webmanifest') }}">
     <meta name="theme-color" content="#ffd84d">
-    <link rel="apple-touch-icon" href="{{ asset('images/pwa-icon.svg') }}">
+    <link rel="icon" type="image/png" href="{{ asset('images/favicon-dc.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/favicon-dc.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,7 +18,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <script>
-    document.documentElement.dataset.theme = localStorage.getItem('flowbase-theme') || ((matchMedia(
+    document.documentElement.dataset.theme = localStorage.getItem('digitalcode-theme') || ((matchMedia(
         '(prefers-color-scheme: dark)').matches) ? 'dark' : 'light')
 </script>
 
@@ -27,13 +28,10 @@
             class="sidebar fixed inset-y-0 left-0 z-50 flex w-[272px] -translate-x-full flex-col lg:translate-x-0">
             <div class="flex h-[76px] items-center border-b border-white/10 px-5">
                 <a href="{{ route('dashboard') }}" class="brand flex min-w-0 items-center gap-3">
-                    <span
-                        class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-indigo-400 to-indigo-600 text-lg font-extrabold text-white shadow-lg shadow-indigo-950/30">F</span>
-                    <span class="brand-copy min-w-0">
-                        <b class="block font-display text-[15px] tracking-tight text-white">Flowbase</b>
-                        <small class="block text-[11px] text-slate-400">Project workspace</small>
-                    </span>
-                </a>
+                    <img src="{{ asset('images/logo-dc.png') }}" alt="Digital Code"
+                        class="brand-full h-9 w-auto shrink-0">
+                    <img src="{{ asset('images/favicon-dc.png') }}" alt="DC"
+                        class="brand-mark h-9 w-9 shrink-0 rounded-lg object-contain">
                 <button id="collapseSidebar"
                     class="ml-auto hidden rounded-lg p-2 text-slate-400 transition hover:bg-white/10 hover:text-white lg:block"
                     aria-label="Collapse navigation">
@@ -167,7 +165,7 @@
                 </div>
             </header>
             <main class="page-enter">@yield('content')</main>
-            <footer class="pb-24 px-6 py-7 text-center text-xs text-slate-400 lg:pb-7">© {{ date('Y') }} Flowbase
+            <footer class="pb-24 px-6 py-7 text-center text-xs text-slate-400 lg:pb-7">© {{ date('Y') }} Digital Code
                 · Made for focused teams.</footer>
         </div>
     </div>
@@ -201,7 +199,7 @@
             aria-modal="true" aria-labelledby="confirmTitle">
             <div data-modal-backdrop class="absolute inset-0 bg-slate-950/55 backdrop-blur-sm">
             </div>
-            <div data-modal-panel class="relative w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl">
+            <div data-modal-panel class="relative w-full max-w-md rounded-[20px] border border-white/60 bg-white/60 p-6 shadow-[0_8px_30px_rgba(80,90,110,0.08)] backdrop-blur-xl">
                 <div class="grid h-11 w-11 place-items-center rounded-xl bg-rose-50 text-rose-600">
                     <x-icon name="trash" class="h-5 w-5" />
                 </div>

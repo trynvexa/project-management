@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Projects · Flowbase') @section('page_title', 'Projects')
+@section('title', 'Projects · Digital Code') @section('page_title', 'Projects')
 @section('content')
     @php($statusClass = ['Planning' => 'badge-status-todo', 'In Progress' => 'badge-status-progress', 'Review' => 'badge-status-review', 'Completed' => 'badge-status-complete'])
     <div class="app-page">

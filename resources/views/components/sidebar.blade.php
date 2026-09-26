@@ -8,7 +8,7 @@
                     DIGITAL CODE
                 </h1>
                 <p class="text-xs text-slate-500">
-                    Project Management
+                    Digital Code
                 </p>
             </div>
         </div>

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Clients · Flowbase') @section('page_title', 'Clients')
+@section('title', 'Clients · Digital Code') @section('page_title', 'Clients')
 @section('content')
     <div class="app-page">
         <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">

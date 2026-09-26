@@ -1,10 +1,10 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace = "com.dijitalcode.projectmanagement"
+    namespace = "com.dijitalcode.digitalcode"
     compileSdk = rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "com.dijitalcode.projectmanagement"
+        applicationId "com.dijitalcode.digitalcode"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

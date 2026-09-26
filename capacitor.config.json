@@ -1,6 +1,6 @@
 {
-  "appId": "com.dijitalcode.projectmanagement",
-  "appName": "Project Management",
+  "appId": "com.dijitalcode.digitalcode",
+  "appName": "Digital Code",
   "webDir": "dist",
   "server": {
     "url": "http://192.168.1.23:8000",

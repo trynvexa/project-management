@@ -1,4 +1,4 @@
-package com.dijitalcode.projectmanagement;
+package com.dijitalcode.digitalcode;
 
 import com.getcapacitor.BridgeActivity;
 

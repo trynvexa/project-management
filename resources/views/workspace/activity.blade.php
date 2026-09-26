@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','Activity · Flowbase') @section('page_title','Activity') @section('breadcrumb','Activity')
+@section('title','Activity · Digital Code') @section('page_title','Activity') @section('breadcrumb','Activity')
 @section('content')
 <div class="app-page"><div><p class="text-sm font-bold text-indigo-600">Workspace pulse</p><h2 class="mt-1 font-display text-2xl font-extrabold">Recent activity</h2><p class="mt-1 text-sm text-slate-500">Latest tasks created in your workspace.</p></div><section class="panel"><div class="stagger divide-y-2 divide-[var(--nb-line)]">@forelse($tasks as $task)<a href="{{ route('tasks.show',$task) }}" class="flex gap-4 py-4 transition hover:bg-[var(--nb-yellow)]"><span class="avatar h-10 w-10 text-xs">{{ strtoupper(substr($task->assignee?->name ?? '?',0,1)) }}</span><span class="min-w-0 flex-1"><b class="block text-sm">{{ $task->name }}</b><small class="mt-1 block text-xs text-slate-500">Task created in {{ $task->projectRelation?->name ?? 'No project' }} · {{ $task->created_at->diffForHumans() }}</small></span><span class="badge badge-status-todo h-fit">{{ $task->status }}</span></a>@empty<x-empty-state message="Activity appears as your team creates tasks." action="Create task" :href="route('tasks.create')" />@endforelse</div></section>{{ $tasks->links() }}</div>
 @endsection

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Kanban · Flowbase') @section('page_title', 'Kanban board')
+@section('title', 'Kanban · Digital Code') @section('page_title', 'Kanban board')
 @section('content')
     @php($meta = ['Todo' => ['badge-status-todo', 'To do'], 'In Progress' => ['badge-status-progress', 'In progress'], 'Review' => ['badge-status-review', 'Review'], 'Completed' => ['badge-status-complete', 'Completed']]) @php($priority = ['High' => 'badge-priority-high', 'Medium' => 'badge-priority-medium', 'Low' => 'badge-priority-low'])
     <div class="app-page">
@@ -57,7 +57,7 @@
                 counts = () => cols.forEach(c => c.closest('section').querySelector('[data-count]').textContent = c
                     .querySelectorAll('.kanban-card').length);
             cols.forEach(col => new window.Sortable(col, {
-                group: 'flowbase-tasks',
+                group: 'digitalcode-tasks',
                 animation: 170,
                 ghostClass: 'dragging',
                 chosenClass: 'kanban-over',
@@ -85,11 +85,11 @@
                             })
                         });
                         if (!r.ok) throw Error();
-                        window.Flowbase?.toast('Task status updated successfully.', 'success')
+                        window.Digital Code?.toast('Task status updated successfully.', 'success')
                     } catch {
                         old.append(task);
                         counts();
-                        window.Flowbase?.toast(
+                        window.Digital Code?.toast(
                             'Status could not be updated. Changes were rolled back.', 'error')
                     } finally {
                         task.style.pointerEvents = ''

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Settings · Flowbase') @section('page_title', 'Account settings') @section('breadcrumb', 'Settings')
+@section('title', 'Settings · Digital Code') @section('page_title', 'Account settings') @section('breadcrumb', 'Settings')
 @section('content')
     <div class="app-page max-w-6xl">
         <section class="panel relative overflow-hidden bg-[var(--nb-blue)]">
